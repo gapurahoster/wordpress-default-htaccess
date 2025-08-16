@@ -1,0 +1,16 @@
+# BEGIN WordPress
+# Baris-baris di antara `BEGIN WordPress` dan `END WordPress`
+# dibuat secara dinamis, dan hanya boleh diubah melalui filter WordPress.
+# Mengubah baris ini secara manual dapat menyebabkan masalah.
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
